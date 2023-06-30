@@ -9,9 +9,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(360, 690),
-      builder: (context, widget) => const MaterialApp(
+      builder: (context, widget) => MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: HomePage(),
+        darkTheme: ThemeData(
+          useMaterial3: true,
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.black54),
+        ),
+        theme: ThemeData(
+          useMaterial3: true,
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        ),
+        themeMode: ThemeMode.system,
+        home: const HomePage(),
       ),
     );
   }
