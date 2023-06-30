@@ -2,6 +2,8 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:pokemon_app/model/abilities.dart';
 import 'package:pokemon_app/model/results.dart';
+import 'package:pokemon_app/model/stats.dart';
+import 'package:pokemon_app/model/types.dart';
 import 'package:pokemon_app/service/repository/dio_client.dart';
 
 class PokemonClient extends DioClient {
@@ -48,7 +50,9 @@ class PokemonClient extends DioClient {
     }).toList();
 
     for (var typeName in types) {
-      print(typeName.type!.name);
+      if (kDebugMode) {
+        print(typeName.type!.name);
+      }
     }
     return types;
   }
@@ -69,7 +73,9 @@ class PokemonClient extends DioClient {
       return Stats.fromJson(e);
     }).toList();
     for (var data in stats) {
-      print(data.stat!.name);
+      if (kDebugMode) {
+        print(data.stat!.name);
+      }
     }
     return stats;
   }
