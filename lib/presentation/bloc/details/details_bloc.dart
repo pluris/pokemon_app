@@ -3,5 +3,9 @@ import 'package:pokemon_app/presentation/bloc/details/details_event.dart';
 import 'package:pokemon_app/presentation/bloc/details/details_state.dart';
 
 class DetailsBloc extends Bloc<DetailsEvent, DetailsState> {
-  DetailsBloc() : super(DetailsInitialState());
+  DetailsBloc() : super(DetailsInitialState()) {
+    on<DetailsEvent>((event, emit) {});
+
+    on<GetDetailsEvent>((event, emit) async {});
+  }
 }
